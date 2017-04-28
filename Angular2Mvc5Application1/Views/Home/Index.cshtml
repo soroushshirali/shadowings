@@ -1,0 +1,14 @@
+﻿@section title{
+    Angular2 Version
+}
+@section scripts{
+    @Html.Partial("DefineAngular")
+    <script>
+        System.import('app/boot');
+    </script>
+}
+<my-app>
+    <div class="waitloading">
+        loading...
+    </div>
+</my-app>

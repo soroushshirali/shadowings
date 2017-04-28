@@ -1,0 +1,33 @@
+﻿<form #f="ngForm">
+    <div class="form-group" >
+        <label for="firstName">First Name</label>
+        <input id="firstName"
+               ngControl="firstName"
+               #firstName="ngForm"
+               (blur)="log(firstName)"
+               type="text"
+               class="form-control"
+               required
+               minlength="4" />
+        <div *ngIf="!firstName.valid && firstName.touched">
+            <div *ngIf="firstName.errors.required">first Nanme is required</div>
+            <div *ngIf="firstName.errors.minlength" >min length is {{firstName.errors.minlength.requiredLength}}</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" ngControl="Email" #Email="ngForm" id="Email" class="form-control" required />
+        <div *ngIf="!Email.valid && Email.touched">
+            <div>Email is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="Frequency">Frequency of Emails</label>
+        <select id="Frequency" class="form-control">
+            <option value="1">weekly</option>
+            <option value="2">yearly</option>
+            <option value="3">monthly</option>
+        </select>
+    </div>
+    <input class="btn btn-default" type="submit" value="submit" [disabled]="!f.valid" />
+</form>
