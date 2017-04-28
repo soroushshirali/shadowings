@@ -4,7 +4,7 @@
     selector: '[autoGrow]',
     host: {
         '(focus)':'onfocus()',
-        '(blur)': 'onblur()'      
+        '(blur)':'onblur()'      
     }
 })
 export class AutoGrowDirective {
